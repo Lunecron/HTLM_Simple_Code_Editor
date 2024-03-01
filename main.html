@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="jquery-3.6.4.min.js"></script>
+
+        
+        
+
+    </head>
+
+    
+    <body>
+        <div id="wrapper">
+        
+            <div id="header">
+                    <div id="logo">CodePlayer</div>
+                    <div id="buttonDiv">
+                        <button id="runButton">Run</button>
+                    </div>
+                    <ul id="toggles"> 
+                            <li class="toggle selected">HTML</li>
+                            <li class="toggle">CSS</li>
+                            <li class="toggle">JS</li>
+                            <li class="toggle selected" style="border:none">Result</li>
+                    </ul>
+            </div>
+            
+            
+            
+            <div class="clear"></div>
+            <div class="codeContainer" id="HTML-container">
+                <div class="codeLabel">HTML</div>
+                <textarea id="html-code"> <div id="circle">Hallo</div> </textarea>
+            </div>
+            <div class="codeContainer" id="CSS-container">
+                <div class="codeLabel">CSS</div>
+                <textarea id="css-code">#circle{ width: 100px; height:100px; background-color: red; border-radius: 50%; margin: 0 auto; text-align: center;}html{background-color:blue;}
+            </textarea>
+            </div>
+            <div class="codeContainer" id="JS-container">
+                <div class="codeLabel">JS</div>
+                <textarea id="js-code">document.getElementById("circle").innerHTML = "Es funktioniert"</textarea>
+            </div>
+            <div class="codeContainer" id="Result-container">
+                <div class="codeLabel">Result</div>
+                <iframe id="resultframe"></iframe>
+            </div>
+        
+        
+        </div>
+        
+        
+
+        
+        <script type="text/javascript">
+            
+            var fensterHoehe = $(window).height();
+            var menuLeisteHoehe =  $("#header").height();
+           
+            var codeContainerHoehe = fensterHoehe-menuLeisteHoehe;
+            
+            $(".codeContainer").height( codeContainerHoehe + "px");
+            
+            
+            $(".toggle").click(function(){
+               $(this).toggleClass("selected");  
+                var activeDiv=$(this).html();
+                $("#"+activeDiv+"-container").toggle();
+                var angezeigteDiv=$(".codeContainer").filter(function(){
+                    return($(this).css("display")!= "none"); 
+                }).length;
+                
+                var tabBreite= 100/angezeigteDiv;
+                $(".codeContainer").css("width",tabBreite+"%")
+            });
+            
+            $("#runButton").click(function(){
+                
+                $("iframe").contents().find("html").html('<style>'+ $("#css-code").val() + '</style>' + $("#html-code").val());
+                document.getElementById("resultframe").contentWindow.eval($("#js-code").val());
+            });
+            
+            
+
+        </script>
+    
+    </body>
+
+
+</html>

@@ -1,0 +1,120 @@
+body{
+    background-color: grey;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+}
+
+
+#wrapper{
+
+}
+
+#logo{
+    font-size: 130%;
+    font-weight: bold;
+    float: left;
+    margin: 0px 0px 0px 20px;
+    padding: 10px 10px 10px 10px;
+    background-color: lightyellow;
+    border-radius: 20%;
+    
+}
+
+#header{
+    width: 100%;
+    height: 50px;
+    background-color: dimgray;
+    border-bottom: 1px solid black;
+    margin: 0px 0px 0px 0px;
+    padding: 10px 0px 0px 0px;
+}
+
+#buttonDiv{
+    float:right;
+    padding: 0px 10px 0px 0px;
+}
+
+#runButton{
+    font-size: 170%;
+    color: white;
+    margin: 0px auto;
+    background-color: black;
+    border-radius: 20%;
+    border-color: yellow;
+}
+
+#toggles{
+    position: relative;
+    width: 238px;
+    height: 30px;
+    margin: 0px auto;
+    list-style: none;
+    border-radius: 10px;
+    border: 3px solid grey;
+    padding: 0px 0px 0px 0px;
+}
+
+#toggles li{
+    font-size: 100%;
+    height: 25px;
+    width: 58px;
+    margin: 0 auto;
+    text-align: center;
+    float:left;
+    border-radius: 5px;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    padding: 5px 0px 0px 0px;
+}
+
+.clear{
+    clear: both;
+}
+
+.codeContainer{
+    height:100%;
+    width: 50%;
+    float: left;
+    position: relative;
+    padding: 0px;
+    
+}
+
+.codeContainer textarea{
+    background-color:lightgray;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: none;
+    outline: none;
+    border-right: 1px solid black;
+    font-family: monotype;
+    font-size: 90%;
+    padding: 5px 0px 0px 5px;
+    box-sizing: border-box;
+
+}
+
+.codeLabel{
+    position: absolute;
+    right: 2px;
+    color:chocolate;
+    
+}
+
+#CSS-container,#JS-container{
+    display:none;
+}
+
+iframe{
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+}
+.selected{
+    background-color: darkgray;
+    
+}
